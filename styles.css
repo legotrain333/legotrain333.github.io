@@ -34,6 +34,8 @@ a {
   display: flex;
   justify-content: center;
   padding: 1em 0;
+  list-style-type: none;
+
 }
 
 .navbar ul {
@@ -53,7 +55,7 @@ a {
 }
 
 .navbar a:hover {
-  color: #ff7b72;
+  color: #58a6ff;
 }
 
 /* Hero Section */
