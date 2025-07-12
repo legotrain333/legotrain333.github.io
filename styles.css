@@ -213,8 +213,10 @@ body {
 }
 
 /* Hero Section */
+/* Fix: Hero section always fills viewport height */
 .hero {
     min-height: 100vh;
+    height: 100vh;
     display: flex;
     align-items: center;
     background: var(--hero-gradient);
@@ -296,10 +298,11 @@ body {
     height: 100%;
 }
 
+/* Fix: Make floating icons more visible */
 .floating-icons i {
     position: absolute;
     font-size: 3rem;
-    color: rgba(255, 255, 255, 0.3);
+    color: rgba(255, 255, 255, 0.7); /* Increased opacity */
     animation: float 6s ease-in-out infinite;
 }
 
@@ -1046,9 +1049,22 @@ section {
         display: flex;
     }
 
+    .hero {
+        min-height: 100vh;
+        height: 100vh;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        text-align: center;
+    }
     .hero-container {
         grid-template-columns: 1fr;
         text-align: center;
+        height: 100%;
+        align-items: center;
+    }
+    .hero-visual {
+        height: 200px;
     }
 
     .hero-title {
