@@ -40,15 +40,15 @@
         <div class="hero-container">
             <div class="hero-content">
                 <h1 class="hero-title">
-                    <span class="highlight">Developer</span> & 
-                    <span class="highlight">Maker</span>
+                    <span class="highlight-yellow">Developer</span> & 
+                    <span class="highlight-yellow">Maker</span>
                 </h1>
                 <p class="hero-subtitle">
                     Crafting digital solutions and physical creations with code, CNC, and 3D printing
                 </p>
                 <div class="hero-buttons">
                     <a href="#projects" class="btn btn-primary">View Projects</a>
-                    <a href="https://github.com/legotrain333" target="_blank" class="btn btn-secondary">GitHub</a>
+                    <a href="https://github.com/legotrain333" target="_blank" class="btn btn-secondary">View Code on GitHub</a>
                 </div>
             </div>
             <div class="hero-visual">
@@ -208,10 +208,40 @@
             <h2 class="section-title">Featured Projects</h2>
             <div class="project-filters">
                 <button class="filter-btn active" data-filter="all">All</button>
-                <button class="filter-btn" data-filter="tools">Tool-Making</button>
+                <button class="filter-btn" data-filter="tools">Replacement Parts</button>
+                <button class="filter-btn" data-filter="electronics">Electronics</button>
             </div>
             
             <div class="projects-grid">
+                <!-- ESP32 Smart Doorbell System - Featured Project -->
+                <div class="project-card featured" data-category="electronics">
+                    <div class="project-image">
+                        <i class="fas fa-bell"></i>
+                    </div>
+                    <div class="project-content">
+                        <h3>ESP32 Smart Doorbell System</h3>
+                        <p class="project-overview">A wireless, battery-friendly doorbell system using ESP32-C6 SuperMini boards and ESP-NOW protocol for instant communication without Wi-Fi.</p>
+                        <div class="project-details">
+                            <div class="project-section">
+                                <strong>Components:</strong> Doorbell units with capacitive touch buttons, ultrasonic sensors, ESP32-C6 SuperMini boards
+                            </div>
+                            <div class="project-section">
+                                <strong>Technology:</strong> ESP-NOW protocol for wireless communication, relay control for LED feedback
+                            </div>
+                            <div class="project-section">
+                                <strong>Features:</strong> Instant wireless signaling, presence detection, visual feedback with LED strips
+                            </div>
+                        </div>
+                        <div class="project-tech">
+                            <span>ESP32</span>
+                            <span>IoT</span>
+                            <span>Wireless</span>
+                            <span>Electronics</span>
+                        </div>
+                        <a href="https://app.cirkitdesigner.com/project/58c12fea-32b3-4fe6-afee-59e9b3863339" target="_blank" class="project-link">View Circuit Design →</a>
+                    </div>
+                </div>
+
                 <!-- Chickenhead Knob - Featured Project -->
                 <div class="project-card featured" data-category="tools">
                     <div class="project-image">
