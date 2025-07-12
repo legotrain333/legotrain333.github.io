@@ -4,14 +4,14 @@
     --bg-secondary: #f8fafc;
     --text-primary: #333333;
     --text-secondary: #4b5563;
-    --accent-primary: #2563eb;
+    --accent-primary: #3b82f6;
     --accent-secondary: #fbbf24;
     --border-color: #e5e7eb;
     --card-bg: #ffffff;
     --navbar-bg: rgba(255, 255, 255, 0.95);
     --navbar-text: #333333;
-    --hero-gradient: linear-gradient(135deg, #2563eb 0%, #fbbf24 100%);
-    --icon-gradient: linear-gradient(135deg, #3b82f6 0%, #f59e0b 100%);
+    --hero-gradient: linear-gradient(135deg, #3b82f6 0%, #fbbf24 100%);
+    --icon-gradient: linear-gradient(135deg, #1d4ed8 0%, #f59e0b 100%);
 }
 
 [data-theme="dark"] {
@@ -19,14 +19,45 @@
     --bg-secondary: #0f172a;
     --text-primary: #f1f5f9;
     --text-secondary: #cbd5e1;
-    --accent-primary: #2563eb;
+    --accent-primary: #1e40af;
     --accent-secondary: #10b981;
     --border-color: #475569;
     --card-bg: #1e293b;
     --navbar-bg: rgba(2, 6, 23, 0.95);
     --navbar-text: #f1f5f9;
-    --hero-gradient: linear-gradient(135deg, #1e40af 0%, #059669 100%);
-    --icon-gradient: linear-gradient(135deg, #1e3a8a 0%, #047857 100%);
+    --hero-gradient: linear-gradient(135deg, #1e40af 0%, #10b981 100%);
+    --icon-gradient: linear-gradient(135deg, #1e3a8a 0%, #059669 100%);
+}
+
+/* General link styles for the whole website */
+a {
+    color: inherit;
+    text-decoration: none;
+    transition: color 0.3s ease;
+}
+
+a:hover {
+    color: var(--accent-primary);
+    text-decoration: underline;
+}
+
+/* Dark mode link styles */
+[data-theme="dark"] a {
+    color: #10b981;
+}
+
+[data-theme="dark"] a:hover {
+    color: #34d399;
+    text-decoration: underline;
+}
+
+/* Keep GitHub button white in dark mode */
+[data-theme="dark"] .btn-secondary {
+    color: white !important;
+}
+
+[data-theme="dark"] .btn-secondary:hover {
+    color: white !important;
 }
 
 /* Reset and Base Styles */
@@ -43,6 +74,9 @@ body {
     background-color: var(--bg-primary);
     overflow-x: hidden;
     transition: background-color 0.3s ease, color 0.3s ease;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
 }
 
 .container {
@@ -114,6 +148,19 @@ body {
     color: var(--accent-primary);
 }
 
+.nav-link.active {
+  color: #fff !important;
+  font-weight: 700;
+  border-bottom: 3px solid #fff;
+  padding-bottom: 2px;
+  background: none;
+}
+
+.navbar.scrolled .nav-link.active {
+  color: var(--accent-primary) !important;
+  border-bottom: 3px solid var(--accent-primary);
+}
+
 .hamburger {
     display: none;
     flex-direction: column;
@@ -177,8 +224,8 @@ body {
 
 .theme-btn {
     background: transparent;
-    border: 2px solid var(--accent-secondary);
-    color: var(--accent-secondary);
+    border: 2px solid var(--accent-primary);
+    color: var(--accent-primary);
     width: 40px;
     height: 40px;
     border-radius: 50%;
@@ -191,8 +238,8 @@ body {
 }
 
 .theme-btn:hover {
-    background: var(--accent-secondary);
-    color: #1f2937;
+    background: var(--accent-primary);
+    color: white;
     transform: scale(1.1);
 }
 
@@ -910,6 +957,124 @@ section {
     color: #065f46;
 }
 
+/* Page Hero Sections - Using same gradient style as contact */
+.about-hero,
+.projects-hero,
+.blog-hero,
+.gallery-hero,
+.tools-hero,
+.contact-hero {
+    background: var(--icon-gradient);
+    color: white;
+    padding: 120px 0 80px;
+    text-align: center;
+    position: relative;
+    overflow: hidden;
+}
+
+/* Navbar styling for about page and other pages with icon-gradient hero */
+.page-about .navbar,
+.page-projects .navbar,
+.page-blog .navbar,
+.page-gallery .navbar,
+.page-tools .navbar,
+.page-contact .navbar {
+    background: transparent;
+}
+
+.page-about .navbar .nav-logo h2,
+.page-projects .navbar .nav-logo h2,
+.page-blog .navbar .nav-logo h2,
+.page-gallery .navbar .nav-logo h2,
+.page-tools .navbar .nav-logo h2,
+.page-contact .navbar .nav-logo h2 {
+    color: white;
+}
+
+.page-about .navbar .nav-link,
+.page-projects .navbar .nav-link,
+.page-blog .navbar .nav-link,
+.page-gallery .navbar .nav-link,
+.page-tools .navbar .nav-link,
+.page-contact .navbar .nav-link {
+    color: white;
+}
+
+.page-about .navbar .bar,
+.page-projects .navbar .bar,
+.page-blog .navbar .bar,
+.page-gallery .navbar .bar,
+.page-tools .navbar .bar,
+.page-contact .navbar .bar {
+    background: white;
+}
+
+.page-about .navbar .theme-btn,
+.page-projects .navbar .theme-btn,
+.page-blog .navbar .theme-btn,
+.page-gallery .navbar .theme-btn,
+.page-tools .navbar .theme-btn,
+.page-contact .navbar .theme-btn {
+    border-color: white;
+    color: white;
+}
+
+.page-about .navbar .theme-btn:hover,
+.page-projects .navbar .theme-btn:hover,
+.page-blog .navbar .theme-btn:hover,
+.page-gallery .navbar .theme-btn:hover,
+.page-tools .navbar .theme-btn:hover,
+.page-contact .navbar .theme-btn:hover {
+    background: white;
+    color: var(--bg-primary);
+}
+
+
+
+.about-hero::before,
+.projects-hero::before,
+.blog-hero::before,
+.gallery-hero::before,
+.tools-hero::before,
+.contact-hero::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: rgba(255, 255, 255, 0.1);
+    pointer-events: none;
+}
+
+.about-hero .container,
+.projects-hero .container,
+.blog-hero .container,
+.gallery-hero .container,
+.tools-hero .container,
+.contact-hero .container {
+    position: relative;
+    z-index: 1;
+}
+
+.about-hero .section-title,
+.projects-hero .section-title,
+.blog-hero .section-title,
+.gallery-hero .section-title,
+.tools-hero .section-title,
+.contact-hero .section-title {
+    color: white;
+    margin-bottom: 1rem;
+}
+
+.about-hero .hero-buttons,
+.projects-hero .hero-buttons,
+.blog-hero .hero-buttons,
+.gallery-hero .hero-buttons,
+.tools-hero .hero-buttons {
+    justify-content: center;
+}
+
 /* Contact Section */
 .contact {
     background: var(--icon-gradient);
@@ -917,9 +1082,10 @@ section {
 }
 
 .contact-content {
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    gap: 4rem;
+    display: flex;
+    justify-content: center;
+    max-width: 600px;
+    margin: 0 auto;
 }
 
 .contact-info h3 {
@@ -1006,6 +1172,7 @@ section {
     color: var(--text-primary);
     padding: 3rem 0 1rem;
     border-top: 1px solid var(--border-color);
+    margin-top: auto;
 }
 
 .footer-content {
@@ -1577,3 +1744,101 @@ section {
     padding-right: 15px;
   }
 } 
+
+.tool-buy-link {
+    color: var(--accent-primary);
+    text-decoration: none;
+    font-size: 0.9rem;
+    font-weight: 500;
+    display: inline-block;
+    margin-top: 0.5rem;
+}
+
+.tool-buy-link:hover {
+    text-decoration: underline;
+}
+
+.tool-section-card {
+    background: var(--bg-secondary);
+    border: 1px solid var(--border-color);
+    border-radius: 12px;
+    padding: 2rem;
+    margin-bottom: 2rem;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+    transition: box-shadow 0.3s ease;
+}
+
+.tool-section-card:hover {
+    box-shadow: 0 4px 16px rgba(0, 0, 0, 0.15);
+}
+
+.tool-section-card .section-title {
+    margin-bottom: 1.5rem;
+    color: var(--accent-primary);
+    border-bottom: 2px solid var(--accent-primary);
+    padding-bottom: 0.5rem;
+} 
+
+/* Contact method icon and heading color for light mode */
+.contact-method h4,
+.contact-method i {
+    color: var(--accent-primary);
+}
+
+/* Contact method text and link color for light mode */
+.contact-method p,
+.contact-method a {
+    color: var(--text-primary);
+}
+
+/* Contact method icon and heading color for dark mode */
+[data-theme="dark"] .contact-method h4,
+[data-theme="dark"] .contact-method i {
+    color: #10b981;
+}
+
+/* Contact method text and link color for dark mode */
+[data-theme="dark"] .contact-method p,
+[data-theme="dark"] .contact-method a {
+    color: #10b981;
+} 
+
+/* Modern semi-transparent navbar for hero-gradient pages */
+/* REMOVE ALL OF THE FOLLOWING */
+/*
+.page-about .navbar {
+    background: rgba(255, 255, 255, 0.7);
+    backdrop-filter: blur(10px);
+    box-shadow: 0 2px 8px rgba(0,0,0,0.04);
+    transition: background 0.3s, box-shadow 0.3s;
+}
+
+.page-about [data-theme="dark"] .navbar {
+    background: rgba(15, 23, 42, 0.7);
+    backdrop-filter: blur(10px);
+    box-shadow: 0 2px 8px rgba(0,0,0,0.12);
+}
+
+.page-about .navbar .nav-link,
+.page-about .navbar .nav-logo h2,
+.page-about .navbar .theme-btn,
+.page-about .navbar .bar {
+    color: var(--accent-primary);
+    border-color: var(--accent-primary);
+}
+
+.page-about .navbar .nav-link.active {
+    color: var(--accent-primary) !important;
+    border-bottom: 3px solid var(--accent-primary);
+}
+
+.page-about .navbar .theme-btn:hover {
+    background: var(--accent-primary);
+    color: white;
+}
+
+.page-about .navbar.scrolled {
+    background: var(--navbar-bg);
+    box-shadow: 0 2px 8px rgba(0,0,0,0.08);
+}
+*/ 

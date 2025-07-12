@@ -1,0 +1,189 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Projects - Zachary Taylor</title>
+    <link rel="stylesheet" href="styles.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+</head>
+<body>
+    <!-- Navigation -->
+    <nav class="navbar">
+        <div class="nav-container">
+            <div class="nav-logo">
+                <h2>ZT</h2>
+            </div>
+            <ul class="nav-menu">
+                <li><a href="index.html" class="nav-link">Home</a></li>
+                <li><a href="about.html" class="nav-link">About</a></li>
+                <li><a href="projects.html" class="nav-link active">Projects</a></li>
+                <li><a href="blog.html" class="nav-link">Blog</a></li>
+                <!-- <li><a href="gallery.html" class="nav-link">Gallery</a></li> -->
+                <li><a href="tools.html" class="nav-link">Tools & Gear</a></li>
+                <li><a href="contact.html" class="nav-link">Contact</a></li>
+            </ul>
+            <div class="theme-toggle">
+                <button id="theme-toggle" class="theme-btn">
+                    <i class="fas fa-sun"></i>
+                </button>
+            </div>
+            <div class="hamburger">
+                <span class="bar"></span>
+                <span class="bar"></span>
+                <span class="bar"></span>
+            </div>
+        </div>
+    </nav>
+    <main>
+        <section class="projects-hero">
+            <div class="container">
+                <h1 class="section-title">Projects</h1>
+                <p style="font-size: 1.2rem; margin-bottom: 2rem; opacity: 0.9;">Showcasing My Latest Work & Creations</p>
+            </div>
+        </section>
+        <section id="projects-content" class="projects" style="background: var(--bg-primary); color: var(--text-primary);">
+            <div class="container">
+                <div class="projects-grid">
+                    <!-- ESP32 Smart Doorbell System -->
+                    <div class="project-card featured" data-category="electronics">
+                        <div class="project-image">
+                            <i class="fas fa-bell"></i>
+                        </div>
+                        <div class="project-content">
+                            <h3>ESP32 Smart Doorbell System</h3>
+                            <p class="project-overview">A wireless, battery-friendly doorbell system using ESP32-C6 SuperMini boards and ESP-NOW protocol for instant communication without Wi-Fi.</p>
+                            <div class="project-details">
+                                <div class="project-section">
+                                    <strong>Components:</strong> Doorbell units with capacitive touch buttons, ultrasonic sensors, ESP32-C6 SuperMini boards
+                                </div>
+                                <div class="project-section">
+                                    <strong>Technology:</strong> ESP-NOW protocol for wireless communication, relay control for LED feedback
+                                </div>
+                                <div class="project-section">
+                                    <strong>Features:</strong> Instant wireless signaling, presence detection, visual feedback with LED strips
+                                </div>
+                            </div>
+                            <div class="project-tech">
+                                <span>ESP32</span>
+                                <span>IoT</span>
+                                <span>Wireless</span>
+                                <span>Electronics</span>
+                            </div>
+                            <a href="https://app.cirkitdesigner.com/project/58c12fea-32b3-4fe6-afee-59e9b3863339" target="_blank" class="project-link">View Circuit Design →</a>
+                        </div>
+                    </div>
+                    <!-- Speaker Knob Replacement -->
+                    <div class="project-card featured" data-category="tools">
+                        <div class="project-image">
+                            <i class="fas fa-volume-up"></i>
+                        </div>
+                        <div class="project-content">
+                            <h3>Speaker Knob Replacement</h3>
+                            <p class="project-overview">Designed and 3D printed a replacement chickenhead knob for a broken speaker, demonstrating real-world problem-solving.</p>
+                            <div class="project-details">
+                                <div class="project-section">
+                                    <strong>Problem:</strong> Broken speaker knob preventing volume control
+                                </div>
+                                <div class="project-section">
+                                    <strong>Solution:</strong> Custom-designed knob with proper fit and ergonomics
+                                </div>
+                                <div class="project-section">
+                                    <strong>Impact:</strong> Restored full functionality to expensive audio equipment
+                                </div>
+                            </div>
+                            <div class="project-tech">
+                                <span>3D Printing</span>
+                                <span>Problem Solving</span>
+                                <span>Design</span>
+                            </div>
+                            <a href="https://www.printables.com/model/1301246-chickenhead-knob" target="_blank" class="project-link">View on Printables →</a>
+                        </div>
+                    </div>
+                    <!-- Placeholder Project 1 -->
+                    <div class="project-card" data-category="future">
+                        <div class="project-image">
+                            <i class="fas fa-cube"></i>
+                        </div>
+                        <div class="project-content">
+                            <h3>Future Project</h3>
+                            <p class="project-overview">Project description coming soon. Stay tuned for more details and links!</p>
+                            <div class="project-details">
+                                <div class="project-section">
+                                    <strong>Components:</strong> TBA
+                                </div>
+                                <div class="project-section">
+                                    <strong>Technology:</strong> TBA
+                                </div>
+                                <div class="project-section">
+                                    <strong>Features:</strong> TBA
+                                </div>
+                            </div>
+                            <div class="project-tech">
+                                <span>Coming Soon</span>
+                            </div>
+                            <a href="#" class="project-link disabled" tabindex="-1" aria-disabled="true">GitHub/Printables Coming Soon</a>
+                        </div>
+                    </div>
+                    <!-- Placeholder Project 2 -->
+                    <div class="project-card" data-category="future">
+                        <div class="project-image">
+                            <i class="fas fa-cogs"></i>
+                        </div>
+                        <div class="project-content">
+                            <h3>Another Future Project</h3>
+                            <p class="project-overview">Details and links for this project will be added soon. Check back for updates!</p>
+                            <div class="project-details">
+                                <div class="project-section">
+                                    <strong>Components:</strong> TBA
+                                </div>
+                                <div class="project-section">
+                                    <strong>Technology:</strong> TBA
+                                </div>
+                                <div class="project-section">
+                                    <strong>Features:</strong> TBA
+                                </div>
+                            </div>
+                            <div class="project-tech">
+                                <span>Coming Soon</span>
+                            </div>
+                            <a href="#" class="project-link disabled" tabindex="-1" aria-disabled="true">GitHub/Printables Coming Soon</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <h3>Zachary Taylor</h3>
+                    <p>Developer & Maker</p>
+                </div>
+                <div class="footer-section">
+                    <h4>Services</h4>
+                    <ul>
+                        <li>Web Development</li>
+                        <li>CNC Machining</li>
+                        <li>3D Printing</li>
+                        <li>Custom Solutions</li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h4>Connect</h4>
+                    <div class="social-links">
+                        <a href="https://github.com/legotrain333"><i class="fab fa-github"></i></a>
+                    </div>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2025 Zachary Taylor. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+    <script src="script.js"></script>
+</body>
+</html> 

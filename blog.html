@@ -1,0 +1,229 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Blog - Zachary Taylor</title>
+    <link rel="stylesheet" href="styles.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+</head>
+<body>
+    <!-- Navigation -->
+    <nav class="navbar">
+        <div class="nav-container">
+            <div class="nav-logo">
+                <h2>ZT</h2>
+            </div>
+            <ul class="nav-menu">
+                <li><a href="index.html" class="nav-link">Home</a></li>
+                <li><a href="about.html" class="nav-link">About</a></li>
+                <li><a href="projects.html" class="nav-link">Projects</a></li>
+                <li><a href="blog.html" class="nav-link active">Blog</a></li>
+                <!-- <li><a href="gallery.html" class="nav-link">Gallery</a></li> -->
+                <li><a href="tools.html" class="nav-link">Tools & Gear</a></li>
+                <li><a href="contact.html" class="nav-link">Contact</a></li>
+            </ul>
+            <div class="theme-toggle">
+                <button id="theme-toggle" class="theme-btn">
+                    <i class="fas fa-sun"></i>
+                </button>
+            </div>
+            <div class="hamburger">
+                <span class="bar"></span>
+                <span class="bar"></span>
+                <span class="bar"></span>
+            </div>
+        </div>
+    </nav>
+    <main>
+        <section class="blog-hero">
+            <div class="container">
+                <h1 class="section-title">Blog / Updates</h1>
+                <p style="font-size: 1.2rem; margin-bottom: 2rem; opacity: 0.9;">Sharing My Journey & Insights</p>
+            </div>
+        </section>
+        <section id="blog-content" class="blog" style="background: var(--bg-primary); color: var(--text-primary);">
+            <div class="container">
+                <div class="blog-grid" id="blogGrid">
+                    <!-- Blog Entry 1 -->
+                    <div class="blog-card" data-blog="1">
+                        <div class="blog-content">
+                            <h3>First Blog Post</h3>
+                            <div class="blog-meta">
+                                <span class="blog-date">2024-06-01</span>
+                                <span class="blog-category">Update</span>
+                            </div>
+                            <p>Welcome to my blog! Here I'll share updates on my projects, lessons learned, and maker adventures.</p>
+                            <a href="#" class="blog-link blog-toggle" data-blog="1">Read More</a>
+                        </div>
+                    </div>
+                    <!-- Blog Entry 2 -->
+                    <div class="blog-card" data-blog="2">
+                        <div class="blog-content">
+                            <h3>ESP32 Doorbell Progress</h3>
+                            <div class="blog-meta">
+                                <span class="blog-date">2024-05-20</span>
+                                <span class="blog-category">Project</span>
+                            </div>
+                            <p>Documenting the build and testing of my ESP32 Smart Doorbell System. More details coming soon!</p>
+                            <a href="#" class="blog-link blog-toggle" data-blog="2">Read More</a>
+                        </div>
+                    </div>
+                    <!-- Blog Entry 3 -->
+                    <div class="blog-card" data-blog="3">
+                        <div class="blog-content">
+                            <h3>3D Printing Tips</h3>
+                            <div class="blog-meta">
+                                <span class="blog-date">2024-05-10</span>
+                                <span class="blog-category">Tips</span>
+                            </div>
+                            <p>Sharing some of my favorite tricks for getting great results with Bambu Lab and Ender printers.</p>
+                            <a href="#" class="blog-link blog-toggle" data-blog="3">Read More</a>
+                        </div>
+                    </div>
+                    <!-- Placeholder Blog Entry -->
+                    <div class="blog-card" data-blog="4">
+                        <div class="blog-content">
+                            <h3>More Posts Coming Soon</h3>
+                            <div class="blog-meta">
+                                <span class="blog-date">TBA</span>
+                                <span class="blog-category">Update</span>
+                            </div>
+                            <p>Stay tuned for more blog entries about my projects, tools, and maker journey!</p>
+                            <a href="#" class="blog-link blog-toggle" data-blog="4">Read More</a>
+                        </div>
+                    </div>
+                </div>
+                <!-- Expanded Blog Post Area -->
+                <div id="expandedBlog" style="display:none;"></div>
+            </div>
+        </section>
+    </main>
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <h3>Zachary Taylor</h3>
+                    <p>Developer & Maker</p>
+                </div>
+                <div class="footer-section">
+                    <h4>Services</h4>
+                    <ul>
+                        <li>Web Development</li>
+                        <li>CNC Machining</li>
+                        <li>3D Printing</li>
+                        <li>Custom Solutions</li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h4>Connect</h4>
+                    <div class="social-links">
+                        <a href="https://github.com/legotrain333"><i class="fab fa-github"></i></a>
+                    </div>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2025 Zachary Taylor. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+    <script src="script.js"></script>
+    <style>
+.expanded-blog-card {
+  max-width: 700px;
+  margin: 2rem auto;
+  width: 100%;
+  background: var(--card-bg);
+  color: var(--text-primary);
+  box-shadow: 0 8px 32px rgba(0,0,0,0.12);
+  position: relative;
+  border-radius: 16px;
+  padding: 2rem 2rem 1.5rem 2rem;
+  z-index: 10;
+}
+@media (max-width: 800px) {
+  .expanded-blog-card { max-width: 98vw; padding: 1rem; }
+}
+</style>
+    <script>
+window.addEventListener('DOMContentLoaded', function() {
+  const blogGrid = document.getElementById('blogGrid');
+  const expandedBlog = document.getElementById('expandedBlog');
+  const blogPosts = {
+    1: {
+      title: 'First Blog Post',
+      date: '2024-06-01',
+      category: 'Update',
+      content: `<p>This is the full content of the first blog post. You can write as much as you want here, including images, code, and detailed stories about your projects and experiences.</p>`
+    },
+    2: {
+      title: 'ESP32 Doorbell Progress',
+      date: '2024-05-20',
+      category: 'Project',
+      content: `<p>Here you can share the full story of your ESP32 Doorbell project: design decisions, challenges, code snippets, and photos of the build process.</p>`
+    },
+    3: {
+      title: '3D Printing Tips',
+      date: '2024-05-10',
+      category: 'Tips',
+      content: `<ul><li>Level your bed regularly</li><li>Use the right slicer settings for each material</li><li>Keep your nozzles clean</li></ul>`
+    },
+    4: {
+      title: 'More Posts Coming Soon',
+      date: 'TBA',
+      category: 'Update',
+      content: `<p>More content will be added here as new blog posts are published.</p>`
+    }
+  };
+
+  function closeExpanded() {
+    expandedBlog.style.display = 'none';
+    expandedBlog.innerHTML = '';
+    // Show all blog cards
+    document.querySelectorAll('.blog-card').forEach(card => card.style.display = '');
+    // Show all Read More links
+    document.querySelectorAll('.blog-link.blog-toggle').forEach(link => link.style.display = '');
+  }
+
+  blogGrid.addEventListener('click', function(e) {
+    const link = e.target.closest('.blog-link.blog-toggle');
+    if (link) {
+      e.preventDefault();
+      const blogId = link.getAttribute('data-blog');
+      // Close any open expanded
+      closeExpanded();
+      // Hide the original blog card
+      const card = blogGrid.querySelector('.blog-card[data-blog="' + blogId + '"]');
+      if (card) card.style.display = 'none';
+      // Build expanded card
+      expandedBlog.innerHTML = `
+        <div class="blog-card expanded-blog-card">
+          <button class="close-expanded" style="position:absolute;top:1rem;right:1rem;font-size:1.5rem;background:none;border:none;cursor:pointer;">&times;</button>
+          <div class="blog-content">
+            <h3>${blogPosts[blogId].title}</h3>
+            <div class="blog-meta">
+              <span class="blog-date">${blogPosts[blogId].date}</span>
+              <span class="blog-category">${blogPosts[blogId].category}</span>
+            </div>
+            ${blogPosts[blogId].content}
+          </div>
+        </div>
+      `;
+      // Show expanded at the top of the grid
+      blogGrid.parentNode.insertBefore(expandedBlog, blogGrid);
+      expandedBlog.style.display = 'block';
+    }
+  });
+
+  // Close button logic
+  expandedBlog.addEventListener('click', function(e) {
+    if (e.target.classList.contains('close-expanded')) {
+      closeExpanded();
+    }
+  });
+});
+</script>
+</body>
+</html> 
