@@ -1570,3 +1570,10 @@ section {
     box-shadow: none !important;
     display: block;
 } 
+
+@media (max-width: 600px) {
+  .about-text {
+    padding-left: 15px;
+    padding-right: 15px;
+  }
+} 
