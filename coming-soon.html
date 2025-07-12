@@ -1,0 +1,182 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Coming Soon - Zachary Taylor</title>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <style>
+        :root {
+            --accent-primary: #2563eb;
+            --accent-secondary: #fbbf24;
+            --accent-dark-secondary: #10b981;
+            --bg-gradient-light: linear-gradient(135deg, #2563eb 0%, #fbbf24 100%);
+            --bg-gradient-dark: linear-gradient(135deg, #1e40af 0%, #10b981 100%);
+            --card-bg-light: #fff;
+            --card-bg-dark: #1e293b;
+            --text-light: #1e293b;
+            --text-dark: #f1f5f9;
+            --muted-light: #475569;
+            --muted-dark: #cbd5e1;
+        }
+        body {
+            min-height: 100vh;
+            margin: 0;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-family: 'Inter', Arial, Helvetica, sans-serif;
+            background: var(--bg-gradient-light);
+            color: var(--text-light);
+            transition: background 0.3s, color 0.3s;
+        }
+        .coming-soon-container {
+            text-align: center;
+            background: var(--card-bg-light);
+            border-radius: 18px;
+            box-shadow: 0 4px 24px rgba(37,99,235,0.08);
+            padding: 3rem 2.5rem;
+            max-width: 400px;
+            transition: background 0.3s, color 0.3s;
+        }
+        .coming-soon-title {
+            color: var(--accent-primary);
+            font-size: 2.2rem;
+            font-weight: 700;
+            margin-bottom: 1.2rem;
+        }
+        .coming-soon-message {
+            font-size: 1.15rem;
+            margin-bottom: 2.2rem;
+            color: var(--muted-light);
+        }
+        .home-link {
+            display: inline-block;
+            color: var(--accent-primary);
+            font-weight: 600;
+            text-decoration: none;
+            border-bottom: 2px solid var(--accent-primary);
+            padding-bottom: 2px;
+            transition: color 0.2s, border-color 0.2s;
+        }
+        .home-link:hover {
+            color: var(--accent-secondary);
+            border-color: var(--accent-secondary);
+        }
+        .theme-toggle {
+            position: absolute;
+            top: 2rem;
+            right: 2rem;
+        }
+        .theme-btn {
+            background: transparent;
+            border: 2px solid var(--accent-secondary);
+            color: var(--accent-secondary);
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            cursor: pointer;
+            transition: all 0.3s;
+            font-size: 1.2rem;
+        }
+        .theme-btn:hover {
+            background: var(--accent-secondary);
+            color: #1e293b;
+        }
+        [data-theme="dark"] body {
+            background: var(--bg-gradient-dark);
+            color: var(--text-dark);
+        }
+        [data-theme="dark"] .coming-soon-container {
+            background: var(--card-bg-dark);
+            color: var(--text-dark);
+        }
+        [data-theme="dark"] .coming-soon-title {
+            color: var(--accent-dark-secondary);
+        }
+        [data-theme="dark"] .coming-soon-message {
+            color: var(--muted-dark);
+        }
+        [data-theme="dark"] .home-link {
+            color: var(--accent-dark-secondary);
+            border-color: var(--accent-dark-secondary);
+        }
+        [data-theme="dark"] .home-link:hover {
+            color: var(--accent-primary);
+            border-color: var(--accent-primary);
+        }
+        [data-theme="dark"] .theme-btn {
+            border-color: var(--accent-dark-secondary);
+            color: var(--accent-dark-secondary);
+        }
+        [data-theme="dark"] .theme-btn:hover {
+            background: var(--accent-dark-secondary);
+            color: #1e293b;
+        }
+    </style>
+</head>
+<body>
+    <button class="theme-btn theme-toggle" id="theme-toggle" title="Toggle dark/light mode">
+        <i class="fas fa-moon"></i>
+    </button>
+    <div class="coming-soon-container">
+        <div class="coming-soon-title">Coming Soon</div>
+        <div class="coming-soon-message">
+            This page is under construction.<br>
+            Check back soon for updates!
+        </div>
+        <a href="index.html" class="home-link">← Back to Home</a>
+    </div>
+    <script>
+        // Dark Mode functionality (copied from main site)
+        const themeToggle = document.getElementById('theme-toggle');
+        const themeIcon = themeToggle.querySelector('i');
+
+        function getSystemTheme() {
+            return window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light';
+        }
+
+        function initializeTheme() {
+            const savedTheme = localStorage.getItem('theme');
+            let theme;
+            if (savedTheme) {
+                theme = savedTheme;
+            } else {
+                theme = getSystemTheme();
+            }
+            document.documentElement.setAttribute('data-theme', theme);
+            updateThemeIcon(theme);
+        }
+
+        themeToggle.addEventListener('click', () => {
+            const currentTheme = document.documentElement.getAttribute('data-theme');
+            const newTheme = currentTheme === 'dark' ? 'light' : 'dark';
+            document.documentElement.setAttribute('data-theme', newTheme);
+            localStorage.setItem('theme', newTheme);
+            updateThemeIcon(newTheme);
+        });
+
+        function updateThemeIcon(theme) {
+            if (theme === 'dark') {
+                themeIcon.className = 'fas fa-sun';
+            } else {
+                themeIcon.className = 'fas fa-moon';
+            }
+        }
+
+        window.matchMedia('(prefers-color-scheme: dark)').addEventListener('change', (e) => {
+            if (!localStorage.getItem('theme')) {
+                const newTheme = e.matches ? 'dark' : 'light';
+                document.documentElement.setAttribute('data-theme', newTheme);
+                updateThemeIcon(newTheme);
+            }
+        });
+
+        initializeTheme();
+    </script>
+</body>
+</html> 
