@@ -2119,3 +2119,32 @@ body.dark .contact-form .btn {
 body.dark .contact-form .btn:hover {
     background-color: #e6b00a;
 }
+/* Light Mode Submit Button */
+.contact-form .btn {
+    width: 100%;
+    padding: 1rem;
+    border-radius: 12px;
+    font-weight: 600;
+    background-color: #ffcc00; /* yellow accent */
+    color: #000; /* black text */
+    border: none;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.contact-form .btn:hover {
+    background-color: #e6b00a; /* darker yellow hover */
+    transform: translateY(-2px);
+}
+
+/* Dark Mode Submit Button */
+body.dark .contact-form .btn {
+    background-color: #00ff66; /* your green */
+    color: #000; /* black text */
+    border: none;
+}
+
+body.dark .contact-form .btn:hover {
+    background-color: #00cc52; /* darker green on hover */
+    transform: translateY(-2px);
+}
