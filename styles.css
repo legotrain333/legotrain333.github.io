@@ -1993,4 +1993,30 @@ section {
     background: var(--navbar-bg);
     box-shadow: 0 2px 8px rgba(0,0,0,0.08);
 }
-*/ 
+/* Light mode button */
+.contact-form .btn {
+    width: 100%;
+    padding: 1rem;
+    border-radius: 12px;
+    font-weight: 600;
+    background-color: var(--accent, #ffcc00);
+    color: #222; /* dark text for light mode */
+    border: none;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.contact-form .btn:hover {
+    background-color: #e6b800;
+    transform: translateY(-2px);
+}
+
+/* Dark mode button */
+body.dark .contact-form .btn {
+    background-color: #ffcc00; /* same accent color */
+    color: #111; /* slightly lighter for contrast in dark mode */
+}
+
+body.dark .contact-form .btn:hover {
+    background-color: #e6b800;
+}
