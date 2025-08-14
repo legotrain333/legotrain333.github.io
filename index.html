@@ -98,6 +98,11 @@
             <div class="form-group">
                 <textarea name="message" placeholder="Your Message" rows="5" required></textarea>
             </div>
+             <!-- Optional: prevent spam -->
+  <input type="hidden" name="_captcha" value="false">
+
+  <!-- Optional: redirect after submit -->
+  <input type="hidden" name="_next" value="index.html">
             <button type="submit" class="btn btn-secondary">Send</button>
         </form>
     </div>
