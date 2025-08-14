@@ -1905,111 +1905,91 @@ section {
     padding-bottom: 0.5rem;
 } 
 
-/* Contact method icon and heading color for light mode */
-.contact-method h4,
-.contact-method i {
-    color: var(--accent-primary);
-}
-
-/* Contact method text and link color for light mode */
-.contact-method p,
-.contact-method a {
-    color: var(--text-primary);
-}
-
-/* Contact method icon and heading color for dark mode */
-[data-theme="dark"] .contact-method h4,
-[data-theme="dark"] .contact-method i {
-    color: #10b981;
-}
-
-/* Contact method text and link color for dark mode */
-[data-theme="dark"] .contact-method p,
-[data-theme="dark"] .contact-method a {
-    color: #10b981;
-} 
 /* Contact Section */
 .contact-section {
-    padding: 4rem 0;
-    background-color: var(--bg-secondary, #f9f9f9);
+    padding: 5rem 1rem;
+    background-color: var(--bg-primary, #fff);
+    text-align: center;
+}
+
+.contact-section .section-title {
+    font-size: 2.5rem;
+    margin-bottom: 2rem;
+    color: var(--text-primary, #222);
 }
 
 .contact-form {
     max-width: 600px;
     margin: 0 auto;
+    background-color: var(--bg-secondary, #f7f7f7);
+    padding: 2rem;
+    border-radius: 16px;
+    box-shadow: 0 8px 20px rgba(0,0,0,0.1);
 }
 
 .contact-form .form-group {
     margin-bottom: 1.5rem;
+    text-align: left;
 }
 
 .contact-form input,
 .contact-form textarea {
     width: 100%;
-    padding: 0.9rem;
+    padding: 1rem;
     border: 1px solid #ccc;
-    border-radius: 8px;
+    border-radius: 12px;
     font-family: 'Inter', sans-serif;
     font-size: 1rem;
     outline: none;
-    transition: border-color 0.3s ease;
-    background-color: var(--bg-primary, #fff);
-    color: var(--text-primary, #000);
+    transition: all 0.3s ease;
+    background-color: #fff;
+    color: #222;
 }
 
 .contact-form input:focus,
 .contact-form textarea:focus {
     border-color: var(--accent, #ffcc00);
+    box-shadow: 0 0 8px rgba(255, 204, 0, 0.3);
 }
 
 .contact-form textarea {
-    resize: none;
+    resize: vertical;
+    min-height: 120px;
 }
 
 .contact-form .btn {
-    display: inline-block;
-    padding: 0.8rem 1.5rem;
-    border-radius: 8px;
+    width: 100%;
+    padding: 1rem;
+    border-radius: 12px;
     font-weight: 600;
+    background-color: var(--accent, #ffcc00);
+    color: #222;
+    border: none;
     cursor: pointer;
-    text-align: center;
+    transition: all 0.3s ease;
 }
 
-/* Modern semi-transparent navbar for hero-gradient pages */
-/* REMOVE ALL OF THE FOLLOWING */
-/*
-.page-about .navbar {
-    background: rgba(255, 255, 255, 0.7);
-    backdrop-filter: blur(10px);
-    box-shadow: 0 2px 8px rgba(0,0,0,0.04);
-    transition: background 0.3s, box-shadow 0.3s;
+.contact-form .btn:hover {
+    background-color: #e6b800;
+    transform: translateY(-2px);
+}
+.contact-form .btn {
+    width: 100%;
+    padding: 1rem;
+    border-radius: 12px;
+    font-weight: 600;
+    background-color: var(--accent, #ffcc00);
+    color: #222; /* ensures dark text on light background */
+    border: none;
+    cursor: pointer;
+    transition: all 0.3s ease;
 }
 
-.page-about [data-theme="dark"] .navbar {
-    background: rgba(15, 23, 42, 0.7);
-    backdrop-filter: blur(10px);
-    box-shadow: 0 2px 8px rgba(0,0,0,0.12);
+.contact-form .btn:hover {
+    background-color: #e6b800;
+    transform: translateY(-2px);
 }
 
-.page-about .navbar .nav-link,
-.page-about .navbar .nav-logo h2,
-.page-about .navbar .theme-btn,
-.page-about .navbar .bar {
-    color: var(--accent-primary);
-    border-color: var(--accent-primary);
-}
-
-.page-about .navbar .nav-link.active {
-    color: var(--accent-primary) !important;
-    border-bottom: 3px solid var(--accent-primary);
-}
-
-.page-about .navbar .theme-btn:hover {
-    background: var(--accent-primary);
-    color: white;
-}
-
-.page-about .navbar.scrolled {
     background: var(--navbar-bg);
     box-shadow: 0 2px 8px rgba(0,0,0,0.08);
 }
