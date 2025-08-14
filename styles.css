@@ -1908,125 +1908,10 @@ section {
 /* Contact Section */
 .contact-section {
     padding: 5rem 1rem;
+    text-align: center;
     background-color: var(--bg-primary, #fff);
-    text-align: center;
 }
 
-.contact-section .section-title {
-    font-size: 2.5rem;
-    margin-bottom: 2rem;
-    color: var(--text-primary, #222);
-}
-
-.contact-form {
-    max-width: 600px;
-    margin: 0 auto;
-    background-color: var(--bg-secondary, #f7f7f7);
-    padding: 2rem;
-    border-radius: 16px;
-    box-shadow: 0 8px 20px rgba(0,0,0,0.1);
-}
-
-.contact-form .form-group {
-    margin-bottom: 1.5rem;
-    text-align: left;
-}
-
-.contact-form input,
-.contact-form textarea {
-    width: 100%;
-    padding: 1rem;
-    border: 1px solid #ccc;
-    border-radius: 12px;
-    font-family: 'Inter', sans-serif;
-    font-size: 1rem;
-    outline: none;
-    transition: all 0.3s ease;
-    background-color: #fff;
-    color: #222;
-}
-
-.contact-form input:focus,
-.contact-form textarea:focus {
-    border-color: var(--accent, #ffcc00);
-    box-shadow: 0 0 8px rgba(255, 204, 0, 0.3);
-}
-
-.contact-form textarea {
-    resize: vertical;
-    min-height: 120px;
-}
-
-.contact-form .btn {
-    width: 100%;
-    padding: 1rem;
-    border-radius: 12px;
-    font-weight: 600;
-    background-color: var(--accent, #ffcc00);
-    color: #222;
-    border: none;
-    cursor: pointer;
-    transition: all 0.3s ease;
-}
-
-.contact-form .btn:hover {
-    background-color: #e6b800;
-    transform: translateY(-2px);
-}
-.contact-form .btn {
-    width: 100%;
-    padding: 1rem;
-    border-radius: 12px;
-    font-weight: 600;
-    background-color: var(--accent, #ffcc00);
-    color: #222; /* ensures dark text on light background */
-    border: none;
-    cursor: pointer;
-    transition: all 0.3s ease;
-}
-
-.contact-form .btn:hover {
-    background-color: #e6b800;
-    transform: translateY(-2px);
-}
-
-    background: var(--navbar-bg);
-    box-shadow: 0 2px 8px rgba(0,0,0,0.08);
-}
-/* Light mode button */
-.contact-form .btn {
-    width: 100%;
-    padding: 1rem;
-    border-radius: 12px;
-    font-weight: 600;
-    background-color: var(--accent, #ffcc00);
-    color: #222; /* dark text for light mode */
-    border: none;
-    cursor: pointer;
-    transition: all 0.3s ease;
-}
-
-.contact-form .btn:hover {
-    background-color: #e6b800;
-    transform: translateY(-2px);
-}
-
-/* Dark mode button */
-body.dark .contact-form .btn {
-    background-color: #ffcc00; /* same accent color */
-    color: #111; /* slightly lighter for contrast in dark mode */
-}
-
-body.dark .contact-form .btn:hover {
-    background-color: #e6b800;
-}
-/* Contact Section */
-.contact-section {
-    padding: 5rem 1rem;
-    text-align: center;
-}
-
-/* Section Title */
 .contact-section .section-title {
     font-size: 2.5rem;
     margin-bottom: 2rem;
@@ -2075,50 +1960,6 @@ body.dark .contact-form .btn:hover {
     min-height: 120px;
 }
 
-/* Submit Button */
-.contact-form .btn {
-    width: 100%;
-    padding: 1rem;
-    border-radius: 12px;
-    font-weight: 600;
-    background-color: #ffcc00; /* bright accent */
-    color: #000; /* black text in light mode */
-    border: none;
-    cursor: pointer;
-    transition: all 0.3s ease;
-}
-
-.contact-form .btn:hover {
-    background-color: #e6b00a;
-    transform: translateY(-2px);
-}
-
-/* Dark Mode */
-body.dark .contact-form {
-    background-color: #1e1e1e; /* dark card background */
-}
-
-body.dark .contact-form input,
-body.dark .contact-form textarea {
-    background-color: #2a2a2a;
-    color: #eee;
-    border: 1px solid #555;
-}
-
-body.dark .contact-form input:focus,
-body.dark .contact-form textarea:focus {
-    border-color: #ffcc00;
-    box-shadow: 0 0 8px rgba(255, 204, 0, 0.5);
-}
-
-body.dark .contact-form .btn {
-    background-color: #ffcc00;
-    color: #111; /* readable in dark mode */
-}
-
-body.dark .contact-form .btn:hover {
-    background-color: #e6b00a;
-}
 /* Light Mode Submit Button */
 .contact-form .btn {
     width: 100%;
@@ -2137,10 +1978,28 @@ body.dark .contact-form .btn:hover {
     transform: translateY(-2px);
 }
 
+/* Dark Mode Contact Form */
+body.dark .contact-form {
+    background-color: #1e1e1e; /* dark card background */
+}
+
+body.dark .contact-form input,
+body.dark .contact-form textarea {
+    background-color: #000; /* black input background */
+    color: #fff; /* white text */
+    border: 1px solid #555;
+}
+
+body.dark .contact-form input:focus,
+body.dark .contact-form textarea:focus {
+    border-color: #00ff66; /* green highlight */
+    box-shadow: 0 0 8px rgba(0, 255, 102, 0.5);
+}
+
 /* Dark Mode Submit Button */
 body.dark .contact-form .btn {
-    background-color: #00ff66; /* your green */
-    color: #000; /* black text */
+    background-color: #00ff66; /* green button */
+    color: #fff; /* white text */
     border: none;
 }
 
@@ -2148,13 +2007,12 @@ body.dark .contact-form .btn:hover {
     background-color: #00cc52; /* darker green on hover */
     transform: translateY(-2px);
 }
+
 /* Success message */
 #form-success {
     font-size: 1rem;
     text-align: center;
-}
-
-/* Optional: smoother transition */
-#form-success {
+    color: #00cc52; /* green for success */
+    display: none;
     transition: all 0.3s ease;
 }
