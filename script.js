@@ -282,4 +282,39 @@ window.addEventListener('load', () => {
     setTimeout(() => {
         document.body.style.opacity = '1';
     }, 100);
+
 }); 
+
+document.addEventListener('DOMContentLoaded', function() {
+    const form = document.querySelector('.contact-form');
+    const successMsg = document.getElementById('form-success');
+
+    form.addEventListener('submit', function(e) {
+        e.preventDefault(); // prevent default form submission
+
+        const formData = new FormData(form);
+
+        fetch(form.action, {
+            method: 'POST',
+            body: formData,
+            headers: {
+                'Accept': 'application/json'
+            }
+        })
+        .then(response => {
+            if (response.ok) {
+                successMsg.style.display = 'block'; // show success message
+                form.reset(); // clear form
+                setTimeout(() => {
+                    successMsg.style.display = 'none'; // hide after 5s
+                }, 5000);
+            } else {
+                alert('Oops! There was a problem sending your message.');
+            }
+        })
+        .catch(error => {
+            alert('Oops! There was a problem sending your message.');
+            console.error(error);
+        });
+    });
+});
