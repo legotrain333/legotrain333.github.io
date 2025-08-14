@@ -1928,6 +1928,52 @@ section {
 [data-theme="dark"] .contact-method a {
     color: #10b981;
 } 
+/* Contact Section */
+.contact-section {
+    padding: 4rem 0;
+    background-color: var(--bg-secondary, #f9f9f9);
+}
+
+.contact-form {
+    max-width: 600px;
+    margin: 0 auto;
+}
+
+.contact-form .form-group {
+    margin-bottom: 1.5rem;
+}
+
+.contact-form input,
+.contact-form textarea {
+    width: 100%;
+    padding: 0.9rem;
+    border: 1px solid #ccc;
+    border-radius: 8px;
+    font-family: 'Inter', sans-serif;
+    font-size: 1rem;
+    outline: none;
+    transition: border-color 0.3s ease;
+    background-color: var(--bg-primary, #fff);
+    color: var(--text-primary, #000);
+}
+
+.contact-form input:focus,
+.contact-form textarea:focus {
+    border-color: var(--accent, #ffcc00);
+}
+
+.contact-form textarea {
+    resize: none;
+}
+
+.contact-form .btn {
+    display: inline-block;
+    padding: 0.8rem 1.5rem;
+    border-radius: 8px;
+    font-weight: 600;
+    cursor: pointer;
+    text-align: center;
+}
 
 /* Modern semi-transparent navbar for hero-gradient pages */
 /* REMOVE ALL OF THE FOLLOWING */
