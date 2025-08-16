@@ -6,22 +6,21 @@ function getSystemTheme() {
     return window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light';
 }
 
+themeToggle.addEventListener('click', () => {
+
 function initializeTheme() {
     const savedTheme = localStorage.getItem('theme');
     let theme = savedTheme || getSystemTheme();
-    
-    if (theme === 'dark') {
-        document.body.classList.add('dark');
-    } else {
-        document.body.classList.remove('dark');
-    }
+    document.body.setAttribute('data-theme', theme);
     updateThemeIcon(theme);
 }
 
 themeToggle.addEventListener('click', () => {
-    const isDark = document.body.classList.toggle('dark');
-    localStorage.setItem('theme', isDark ? 'dark' : 'light');
-    updateThemeIcon(isDark ? 'dark' : 'light');
+    const currentTheme = document.body.getAttribute('data-theme') === 'dark' ? 'dark' : 'light';
+    const newTheme = currentTheme === 'dark' ? 'light' : 'dark';
+    document.body.setAttribute('data-theme', newTheme);
+    localStorage.setItem('theme', newTheme);
+    updateThemeIcon(newTheme);
 });
 
 function updateThemeIcon(theme) {
@@ -31,8 +30,7 @@ function updateThemeIcon(theme) {
 window.matchMedia('(prefers-color-scheme: dark)').addEventListener('change', (e) => {
     if (!localStorage.getItem('theme')) {
         const newTheme = e.matches ? 'dark' : 'light';
-        if (newTheme === 'dark') document.body.classList.add('dark');
-        else document.body.classList.remove('dark');
+        document.body.setAttribute('data-theme', newTheme);
         updateThemeIcon(newTheme);
     }
 });
