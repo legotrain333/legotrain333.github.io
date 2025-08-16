@@ -1,3 +1,126 @@
+.contact-form-section .btn.btn-primary {
+    min-width: 180px;
+    min-height: 56px;
+    font-size: 1.25rem;
+    padding: 1.1rem 0;
+}
+.contact-form-section .contact-form {
+    /* ...existing code... */
+    align-items: center;
+    text-align: center;
+}
+
+.contact-form-section .form-group {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.contact-form-section .form-group input,
+.contact-form-section .form-group textarea {
+    width: 100%;
+    max-width: 340px;
+    text-align: center;
+}
+/* --- Custom Contact Form Card Styling for Home Page --- */
+.contact-form-section {
+    padding: 3rem 0;
+    background: var(--bg-secondary);
+}
+
+.contact-form-section .container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.contact-form-section .contact-form {
+    background: var(--card-bg);
+    border: 1.5px solid var(--border-color);
+    border-radius: 20px;
+    box-shadow: 0 8px 32px rgba(37, 99, 235, 0.13);
+    padding: 3.5rem 2.5rem;
+    max-width: 540px;
+    width: 100%;
+    margin: 0 auto;
+    display: flex;
+    flex-direction: column;
+    gap: 2.2rem;
+    align-items: center;
+    text-align: center;
+}
+
+.contact-form-section .section-title {
+    margin-bottom: 2rem;
+}
+
+.contact-form-section .form-group input,
+.contact-form-section .form-group textarea {
+    background: var(--bg-primary);
+    border: 1.5px solid var(--border-color);
+    border-radius: 10px;
+    padding: 1.2rem 1.1rem;
+    font-size: 1.25rem;
+    color: var(--text-primary);
+    transition: border-color 0.3s, box-shadow 0.3s;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.06);
+    width: 100%;
+    max-width: 440px;
+    text-align: center;
+}
+
+.contact-form-section .form-group input:focus,
+.contact-form-section .form-group textarea:focus {
+    border-color: var(--accent-primary);
+    outline: none;
+    box-shadow: 0 2px 8px rgba(37,99,235,0.10);
+}
+
+.contact-form-section .form-group textarea {
+    min-height: 120px;
+    resize: vertical;
+}
+
+.contact-form-section .btn.btn-primary {
+    background: var(--accent-primary);
+    color: #fff;
+    border: none;
+    font-weight: 700;
+    font-size: 1.35rem;
+    border-radius: 12px;
+    padding: 1.3rem 0;
+    margin-top: 0.5rem;
+    min-width: 220px;
+    min-height: 64px;
+    box-shadow: 0 4px 16px rgba(37,99,235,0.13);
+    transition: background 0.2s, color 0.2s, box-shadow 0.2s;
+}
+
+.contact-form-section .btn.btn-primary:hover {
+    background: var(--accent-secondary);
+    color: #222;
+    box-shadow: 0 4px 16px rgba(251,191,36,0.13);
+}
+
+@media (max-width: 600px) {
+    .contact-form-section .contact-form {
+        padding: 1.2rem 0.5rem;
+        max-width: 98vw;
+    }
+    .contact-form-section .form-group input,
+    .contact-form-section .form-group textarea {
+        max-width: 98vw;
+        font-size: 1.05rem;
+        padding: 0.8rem 0.5rem;
+    }
+    .contact-form-section .btn.btn-primary {
+        min-width: 98vw;
+        font-size: 1.1rem;
+        min-height: 48px;
+        padding: 0.8rem 0;
+    }
+}
 /* Dark Mode CSS Variables */
 :root {
     --bg-primary: #ffffff;
