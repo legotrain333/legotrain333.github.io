@@ -1905,114 +1905,66 @@ section {
     padding-bottom: 0.5rem;
 } 
 
-/* Contact Section */
-.contact-section {
-    padding: 5rem 1rem;
-    text-align: center;
-    background-color: var(--bg-primary, #fff);
+/* Contact method icon and heading color for light mode */
+.contact-method h4,
+.contact-method i {
+    color: var(--accent-primary);
 }
 
-.contact-section .section-title {
-    font-size: 2.5rem;
-    margin-bottom: 2rem;
-    color: var(--text-primary, #222);
+/* Contact method text and link color for light mode */
+.contact-method p,
+.contact-method a {
+    color: var(--text-primary);
 }
 
-/* Contact Form Card */
-.contact-form {
-    max-width: 600px;
-    margin: 0 auto;
-    padding: 2rem;
-    border-radius: 16px;
-    box-shadow: 0 8px 20px rgba(0,0,0,0.1);
-    background-color: var(--bg-secondary, #f7f7f7);
-    transition: all 0.3s ease;
+/* Contact method icon and heading color for dark mode */
+[data-theme="dark"] .contact-method h4,
+[data-theme="dark"] .contact-method i {
+    color: #10b981;
 }
 
-/* Form Fields */
-.contact-form .form-group {
-    margin-bottom: 1.5rem;
-    text-align: left;
+/* Contact method text and link color for dark mode */
+[data-theme="dark"] .contact-method p,
+[data-theme="dark"] .contact-method a {
+    color: #10b981;
+} 
+
+/* Modern semi-transparent navbar for hero-gradient pages */
+/* REMOVE ALL OF THE FOLLOWING */
+/*
+.page-about .navbar {
+    background: rgba(255, 255, 255, 0.7);
+    backdrop-filter: blur(10px);
+    box-shadow: 0 2px 8px rgba(0,0,0,0.04);
+    transition: background 0.3s, box-shadow 0.3s;
 }
 
-.contact-form input,
-.contact-form textarea {
-    width: 100%;
-    padding: 1rem;
-    border: 1px solid #ccc;
-    border-radius: 12px;
-    font-family: 'Inter', sans-serif;
-    font-size: 1rem;
-    outline: none;
-    background-color: #fff;
-    color: #222;
-    transition: all 0.3s ease;
+.page-about [data-theme="dark"] .navbar {
+    background: rgba(15, 23, 42, 0.7);
+    backdrop-filter: blur(10px);
+    box-shadow: 0 2px 8px rgba(0,0,0,0.12);
 }
 
-.contact-form input:focus,
-.contact-form textarea:focus {
-    border-color: #ffcc00;
-    box-shadow: 0 0 8px rgba(255, 204, 0, 0.3);
+.page-about .navbar .nav-link,
+.page-about .navbar .nav-logo h2,
+.page-about .navbar .theme-btn,
+.page-about .navbar .bar {
+    color: var(--accent-primary);
+    border-color: var(--accent-primary);
 }
 
-.contact-form textarea {
-    resize: vertical;
-    min-height: 120px;
+.page-about .navbar .nav-link.active {
+    color: var(--accent-primary) !important;
+    border-bottom: 3px solid var(--accent-primary);
 }
 
-/* Light Mode Submit Button */
-.contact-form .btn {
-    width: 100%;
-    padding: 1rem;
-    border-radius: 12px;
-    font-weight: 600;
-    background-color: #ffcc00; /* yellow accent */
-    color: #000; /* black text */
-    border: none;
-    cursor: pointer;
-    transition: all 0.3s ease;
+.page-about .navbar .theme-btn:hover {
+    background: var(--accent-primary);
+    color: white;
 }
 
-.contact-form .btn:hover {
-    background-color: #e6b00a; /* darker yellow hover */
-    transform: translateY(-2px);
+.page-about .navbar.scrolled {
+    background: var(--navbar-bg);
+    box-shadow: 0 2px 8px rgba(0,0,0,0.08);
 }
-
-/* Dark Mode Contact Form */
-body.dark .contact-form {
-    background-color: #1e1e1e; /* dark card background */
-}
-
-body.dark .contact-form input,
-body.dark .contact-form textarea {
-    background-color: #000; /* black input background */
-    color: #fff; /* white text */
-    border: 1px solid #555;
-}
-
-body.dark .contact-form input:focus,
-body.dark .contact-form textarea:focus {
-    border-color: #00ff66; /* green highlight */
-    box-shadow: 0 0 8px rgba(0, 255, 102, 0.5);
-}
-
-/* Dark Mode Submit Button */
-body.dark .contact-form .btn {
-    background-color: #00ff66; /* green button */
-    color: #fff; /* white text */
-    border: none;
-}
-
-body.dark .contact-form .btn:hover {
-    background-color: #00cc52; /* darker green on hover */
-    transform: translateY(-2px);
-}
-
-/* Success message */
-#form-success {
-    font-size: 1rem;
-    text-align: center;
-    color: #00cc52; /* green for success */
-    display: none;
-    transition: all 0.3s ease;
-}
+*/ 
