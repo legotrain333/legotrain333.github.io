@@ -1,6 +1,6 @@
 // Dark Mode functionality
 const themeToggle = document.getElementById('theme-toggle');
-const themeIcon = themeToggle.querySelector('i');
+const themeIcon = themeToggle ? themeToggle.querySelector('i') : null;
 
 // Function to get system theme preference
 function getSystemTheme() {
@@ -25,16 +25,19 @@ function initializeTheme() {
 }
 
 // Theme toggle functionality
-themeToggle.addEventListener('click', () => {
+if (themeToggle) {
+    themeToggle.addEventListener('click', () => {
     const currentTheme = document.documentElement.getAttribute('data-theme');
     const newTheme = currentTheme === 'dark' ? 'light' : 'dark';
     
     document.documentElement.setAttribute('data-theme', newTheme);
     localStorage.setItem('theme', newTheme); // Save manual preference
     updateThemeIcon(newTheme);
-});
+    });
+}
 
 function updateThemeIcon(theme) {
+    if (!themeIcon) return;
     if (theme === 'dark') {
         themeIcon.className = 'fas fa-sun';
     } else {
@@ -55,20 +58,22 @@ window.matchMedia('(prefers-color-scheme: dark)').addEventListener('change', (e)
 // Initialize theme on page load
 initializeTheme();
 
-// Navigation functionality
+// Navigation functionality (guarded for pages without mobile nav)
 const hamburger = document.querySelector('.hamburger');
 const navMenu = document.querySelector('.nav-menu');
 
-hamburger.addEventListener('click', () => {
-    hamburger.classList.toggle('active');
-    navMenu.classList.toggle('active');
-});
+if (hamburger && navMenu) {
+    hamburger.addEventListener('click', () => {
+        hamburger.classList.toggle('active');
+        navMenu.classList.toggle('active');
+    });
 
-// Close mobile menu when clicking on a link
-document.querySelectorAll('.nav-link').forEach(n => n.addEventListener('click', () => {
-    hamburger.classList.remove('active');
-    navMenu.classList.remove('active');
-}));
+    // Close mobile menu when clicking on a link
+    document.querySelectorAll('.nav-link').forEach(n => n.addEventListener('click', () => {
+        hamburger.classList.remove('active');
+        navMenu.classList.remove('active');
+    }));
+}
 
 // Smooth scrolling for navigation links
 document.querySelectorAll('a[href^="#"]').forEach(anchor => {
@@ -169,46 +174,52 @@ document.addEventListener('DOMContentLoaded', () => {
 
 window.addEventListener('scroll', animateSkillBars);
 
-// Contact form functionality
+// Contact form functionality (guarded)
 const contactForm = document.querySelector('.contact-form');
 
-contactForm.addEventListener('submit', (e) => {
-    e.preventDefault();
-    
-    // Get form data
-    const formData = new FormData(contactForm);
-    const name = formData.get('name');
-    const email = formData.get('email');
-    const service = formData.get('service');
-    const message = formData.get('message');
-    
-    // Simple validation
-    if (!name || !email || !service || !message) {
-        alert('Please fill in all fields');
-        return;
-    }
-    
-    // Email validation
-    const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
-    if (!emailRegex.test(email)) {
-        alert('Please enter a valid email address');
-        return;
-    }
-    
-    // Simulate form submission
-    const submitBtn = contactForm.querySelector('button[type="submit"]');
-    const originalText = submitBtn.textContent;
-    
-    submitBtn.textContent = 'Sending...';
-    submitBtn.disabled = true;
-    
-    setTimeout(() => {
-        alert('Thank you for your message! I\'ll get back to you soon.');
-        contactForm.reset();
-        submitBtn.textContent = originalText;
-        submitBtn.disabled = false;
-    }, 2000);
-});
+if (contactForm) {
+    contactForm.addEventListener('submit', (e) => {
+        e.preventDefault();
+        
+        // Get form data
+        const formData = new FormData(contactForm);
+        const name = formData.get('name');
+        const email = formData.get('email');
+        const service = formData.get('service');
+        const message = formData.get('message');
+        
+        // Simple validation
+        if (!name || !email || !service || !message) {
+            alert('Please fill in all fields');
+            return;
+        }
+        
+        // Email validation
+        const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+        if (!emailRegex.test(email)) {
+            alert('Please enter a valid email address');
+            return;
+        }
+        
+        // Simulate form submission
+        const submitBtn = contactForm.querySelector('button[type="submit"]');
+        const originalText = submitBtn ? submitBtn.textContent : 'Send';
+        
+        if (submitBtn) {
+            submitBtn.textContent = 'Sending...';
+            submitBtn.disabled = true;
+        }
+        
+        setTimeout(() => {
+            alert('Thank you for your message! I\'ll get back to you soon.');
+            contactForm.reset();
+            if (submitBtn) {
+                submitBtn.textContent = originalText;
+                submitBtn.disabled = false;
+            }
+        }, 2000);
+    });
+}
 
 // Intersection Observer for animations
 const observerOptions = {
@@ -237,9 +248,9 @@ document.addEventListener('DOMContentLoaded', () => {
     });
 });
 
-// Typing effect for hero title
+// Typing effect for hero title (guarded)
 const heroTitle = document.querySelector('.hero-title');
-const originalText = heroTitle.textContent;
+const originalText = heroTitle ? heroTitle.textContent : '';
 
 function typeWriter(element, text, speed = 100) {
     let i = 0;
@@ -258,6 +269,7 @@ function typeWriter(element, text, speed = 100) {
 
 // Start typing effect when page loads
 window.addEventListener('load', () => {
+    if (!heroTitle) return;
     setTimeout(() => {
         typeWriter(heroTitle, originalText, 50);
     }, 500);
