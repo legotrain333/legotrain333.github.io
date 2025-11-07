@@ -256,13 +256,22 @@
     font-size: 1.25rem;
     font-weight: 600;
     margin-bottom: 0.5rem;
-    color: var(--text-primary);
+    color: #181818; /* Increased contrast for accessibility */
 }
 
 .preview-item p {
     color: var(--text-secondary);
     margin-bottom: 1.5rem;
     line-height: 1.5;
+}
+
+/* Ensure preview card text is readable in dark mode */
+[data-theme="dark"] .preview-item {
+    color: var(--text-primary);
+}
+
+[data-theme="dark"] .preview-item h3 {
+    color: var(--text-primary);
 }
 
 .preview-link {
@@ -1440,11 +1449,11 @@ section {
 .footer-section h3,
 .footer-section h4 {
     margin-bottom: 1rem;
-    color: var(--accent-primary) !important;
+    color: #181818 !important; /* Increased contrast for accessibility */
 }
 [data-theme="dark"] .footer-section h3,
 [data-theme="dark"] .footer-section h4 {
-    color: #4ade80;
+    color: #e0f2fe !important; /* Lighter blue for better contrast in dark mode */
 }
 
 .footer-section ul {
@@ -1481,7 +1490,10 @@ section {
     text-align: center;
     padding-top: 2rem;
     border-top: 1px solid var(--border-color);
-    color: var(--text-secondary);
+    color: #181818;
+}
+[data-theme="dark"] .footer-bottom {
+    color: #e0f2fe;
 }
 
 /* Responsive Design */
